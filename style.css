@@ -1,0 +1,607 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px;
+}
+
+/* ===== ЗАГОЛОВОК (ENJOY YOUR STUDYING!) ===== */
+.card__title {
+  width: 207px;
+  height: 24px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e212c;
+  text-align: center;
+  margin: 22px auto 8px;
+  white-space: nowrap;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* ===== ПОДЗАГОЛОВОК (Our online courses) ===== */
+.card__subtitle {
+  width: 386px;
+  height: 60px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+  color: #1e212c;
+  text-align: center;
+  margin: 0 auto 85px;
+  white-space: nowrap;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* ===== КОНТРОЛЫ (ФИЛЬТРЫ + ПОИСК В РЯД) ===== */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+  margin-bottom: 40px;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-wrap: wrap;
+  }
+}
+/* ===== ФИЛЬТРЫ (РАЗДЕЛЫ) ===== */
+.filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  width: auto;
+  height: auto;
+  flex: 0 1 auto;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+@media (max-width: 1300px) {
+  .filters {
+    width: auto;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .filters {
+    flex-wrap: wrap;
+    flex: 1;
+    width: 100%;
+    height: auto;
+    gap: 6px;
+  }
+}
+.filters__item {
+  /* All */
+  width: auto;
+  height: auto;
+  /* base/bold - размер 15px */
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 150%;
+  text-align: center;
+  /* gray/600 */
+  color: #9a9ca5;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  /* Дополнительные стили для кнопки */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  gap: 6px;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filters__item:hover {
+  color: #1a1a1a;
+  background: #f3f4f6;
+}
+
+.filters__item--active {
+  color: #1a1a1a;
+  background: #f3f4f6;
+}
+
+@media (max-width: 768px) {
+  .filters__item {
+    width: auto;
+    height: auto;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+.filters__count {
+  /* 17 */
+  width: 12px;
+  height: 15px;
+  /* extraextrasmall/bold */
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 150%;
+  text-align: center;
+  /* gray/600 */
+  color: #9a9ca5;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  vertical-align: super;
+  margin-top: -4px;
+}
+
+.filters__item--active .filters__count {
+  color: #6b7280;
+}
+
+/* ===== ПОИСК ===== */
+.search {
+  flex-shrink: 0;
+  width: 280px;
+  height: 40px;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .search {
+    width: 100%;
+    min-width: unset;
+    height: 40px;
+    margin-left: 0;
+  }
+}
+.search__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.search__icon {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+}
+
+.search__input {
+  width: 100%;
+  height: 100%;
+  padding: 0 36px 0 16px;
+  font-size: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: "Lato", sans-serif;
+  background: #f9fafb;
+  color: #1a1a1a;
+}
+
+.search__input::placeholder {
+  color: #9ca3af;
+}
+
+.search__input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ===== КАРТОЧКИ КУРСОВ ===== */
+.courses {
+  margin-top: 10px;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.courses__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 390px);
+  gap: 30px;
+  justify-content: start;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+@media (max-width: 1300px) {
+  .courses__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .courses__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .courses__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-content: center;
+  }
+}
+/* ===== ОДНА КАРТОЧКА 390x438 ===== */
+.course-card {
+  width: 390px;
+  height: 438px;
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1300px) {
+  .course-card {
+    width: 100%;
+    height: 438px;
+    min-height: 438px;
+    flex-shrink: 1;
+  }
+}
+@media (max-width: 992px) {
+  .course-card {
+    height: 438px;
+    min-height: 438px;
+  }
+}
+@media (max-width: 768px) {
+  .course-card {
+    width: 100%;
+    height: auto;
+    min-height: unset;
+    flex-shrink: 1;
+  }
+}
+/* ===== КАРТИНКА 390x240 ===== */
+.course-card__image {
+  width: 390px;
+  height: 240px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+@media (max-width: 1300px) {
+  .course-card__image {
+    width: 100%;
+    height: 240px;
+  }
+}
+@media (max-width: 768px) {
+  .course-card__image {
+    height: 200px;
+  }
+}
+.course-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== КАТЕГОРИЯ (BADGE) ===== */
+.course-card__category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  gap: 10px;
+  height: 23px;
+  border-radius: 4px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  margin: 16px 16px 12px 24px;
+  align-self: flex-start;
+  text-transform: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .course-card__category {
+    height: 23px;
+    font-size: 10px;
+    padding: 2px 10px;
+    margin: 16px 16px 12px 24px;
+  }
+}
+/* ===== РАЗНАЯ ШИРИНА ДЛЯ КАЖДОЙ КАТЕГОРИИ ===== */
+.course-card__category--marketing {
+  width: 90px;
+  background: #03cea4;
+}
+
+@media (max-width: 768px) {
+  .course-card__category--marketing {
+    width: 80px;
+  }
+}
+.course-card__category--management {
+  width: 110px;
+  background: #5a87fc;
+}
+
+@media (max-width: 768px) {
+  .course-card__category--management {
+    width: 95px;
+  }
+}
+.course-card__category--hr {
+  width: 125px;
+  background: #f89828;
+}
+
+@media (max-width: 768px) {
+  .course-card__category--hr {
+    width: 110px;
+  }
+}
+.course-card__category--design {
+  width: 80px;
+  background: #f52f6e;
+}
+
+@media (max-width: 768px) {
+  .course-card__category--design {
+    width: 70px;
+  }
+}
+.course-card__category--development {
+  width: 120px;
+  background: #7772f1;
+}
+
+@media (max-width: 768px) {
+  .course-card__category--development {
+    width: 105px;
+  }
+}
+.course-card__category--business {
+  width: 95px;
+  background: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .course-card__category--business {
+    width: 85px;
+  }
+}
+/* ===== ЗАГОЛОВОК КАРТОЧКИ ===== */
+.course-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 20px 8px 24px;
+  line-height: 1.3;
+  flex-grow: 0;
+  font-family: "Lato", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .course-card__title {
+    margin: 0 16px 8px 16px;
+  }
+}
+/* ===== ПОДВАЛ КАРТОЧКИ (ЦЕНА + АВТОР) ===== */
+.course-card__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 173px;
+  height: 27px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  margin: 0 24px 20px 24px;
+  padding-top: 0;
+  border-top: none;
+  margin-top: auto;
+  font-family: "Lato", sans-serif;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .course-card__footer {
+    width: auto;
+    height: auto;
+    margin: 0 16px 16px 16px;
+  }
+}
+.course-card__price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.course-card__divider {
+  font-size: 18px;
+  color: #d1d5db;
+  font-weight: 300;
+}
+
+.course-card__author {
+  width: 154px;
+  height: 27px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #787a80;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .course-card__author {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+  }
+}
+/* ===== КНОПКА LOAD MORE ===== */
+.courses__load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  padding-top: 0;
+  border-top: none;
+}
+
+@media (max-width: 768px) {
+  .courses__load-more {
+    margin-top: 60px;
+  }
+}
+.load-more__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  width: 116px;
+  height: 26px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Lato", sans-serif;
+}
+
+.load-more__button:hover {
+  color: #6366f1;
+}
+
+.load-more__button:hover .load-more__icon svg {
+  stroke: #6366f1;
+}
+
+.load-more__button:hover .load-more__text {
+  color: #6366f1;
+}
+
+.load-more__button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .load-more__button {
+    padding: 0px;
+    gap: 12px;
+    width: auto;
+    height: auto;
+  }
+}
+.load-more__text {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #1a1a1a;
+  transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .load-more__text {
+    font-size: 14px;
+  }
+}
+.load-more__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.load-more__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: #1a1a1a;
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .load-more__icon {
+    width: 18px;
+    height: 18px;
+  }
+  .load-more__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
