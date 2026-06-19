@@ -1,3 +1,6 @@
+// ===== ПУТЬ К ПАПКЕ С КАРТИНКАМИ =====
+const IMAGES_PATH = "images/";
+
 // ===== ДАННЫЕ КУРСОВ =====
 const coursesData = [
   {
@@ -6,7 +9,7 @@ const coursesData = [
     category: "marketing",
     price: "$100",
     author: "Jerome Bell",
-    image: "image.png",
+    image: IMAGES_PATH + "image.png",
   },
   {
     id: 2,
@@ -14,7 +17,7 @@ const coursesData = [
     category: "management",
     price: "$480",
     author: "Marvin McKinney",
-    image: "image1.png",
+    image: IMAGES_PATH + "image1.png",
   },
   {
     id: 3,
@@ -22,7 +25,7 @@ const coursesData = [
     category: "hr",
     price: "$200",
     author: "Leslie Alexander Li",
-    image: "image2.png",
+    image: IMAGES_PATH + "image2.png",
   },
   {
     id: 4,
@@ -30,7 +33,7 @@ const coursesData = [
     category: "marketing",
     price: "$530",
     author: "Kristin Watson",
-    image: "image4.png",
+    image: IMAGES_PATH + "image4.png",
   },
   {
     id: 5,
@@ -38,7 +41,7 @@ const coursesData = [
     category: "design",
     price: "$500",
     author: "Guy Hawkins",
-    image: "image5.png",
+    image: IMAGES_PATH + "image5.png",
   },
   {
     id: 6,
@@ -46,7 +49,7 @@ const coursesData = [
     category: "management",
     price: "$400",
     author: "Dianne Russell",
-    image: "image6.png",
+    image: IMAGES_PATH + "image6.png",
   },
   {
     id: 7,
@@ -54,7 +57,7 @@ const coursesData = [
     category: "development",
     price: "$600",
     author: "Brooklyn Simmons",
-    image: "image7.png",
+    image: IMAGES_PATH + "image7.png",
   },
   {
     id: 8,
@@ -62,7 +65,7 @@ const coursesData = [
     category: "hr",
     price: "$150",
     author: "Kathryn Murphy",
-    image: "image8.png",
+    image: IMAGES_PATH + "image8.png",
   },
   {
     id: 9,
@@ -70,7 +73,7 @@ const coursesData = [
     category: "design",
     price: "$240",
     author: "Cody Fisher",
-    image: "image9.png",
+    image: IMAGES_PATH + "image9.png",
   },
 ];
 
